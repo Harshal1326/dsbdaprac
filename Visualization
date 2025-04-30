@@ -14,7 +14,7 @@ df.columns
 Pie Chart
 sex_counts = df['sex'].value_counts()
 plt.figure(figsize=(6, 6))
-plt.pie(sex_counts, labels=['Male', 'Female'], autopct='%1.1f%%', startangle=90)
+plt.pie(sex_counts, labels=['Male', 'Female'], autopct='%1.1f%%', startangle=90)  #labels = Type_counts.index
 plt.title('Distribution of Sex')
 plt.show()
 
