@@ -1,5 +1,7 @@
 import pandas as pd
 data = pd.read_csv('airquality.csv')
+
+Data Cleaning
 data.head()
 
 print (data. isnull())
@@ -11,9 +13,10 @@ data.describe()
 data.isnull().sum()
 
 data['Ozone'].mean()
-data['Ozone'] = data['Ozone'].fillna(data['Ozone'].mean())
+data['Ozone'] = data['Ozone'].fillna(data['Ozone'].mean())                 #Do same porcess for all null values
 data.isnull().sum()
 
+Data Integration
 subSet1 = data[['Ozone', 'Month']]
 subSet2 = data[['Ozone','Temp']]
 subSet1.head()
@@ -22,6 +25,7 @@ subSet2.head()
 concatenated_data = pd.concat([subSet1, subSet2], axis=1)
 concatenated_data
 
+Error Correction
 def remove_outliers(column):
 Q1 = column.quantile(0.25)
 Q3 = column.quantile(0.75)
@@ -33,6 +37,7 @@ data.columns
 
 data
 
+Data Transformation
 from sklearn.preprocessing import LabelEncoder
 col_label= ['Ozone','Temp','Month']
 encoder = LabelEncoder()
